@@ -2,10 +2,10 @@
 //                             //obj
 import dotenv from "dotenv";
 import connectDB from "./db/index.js";
-
+import {app} from "./app.js"
 
 dotenv.config({
-    path:'./env'
+    path:'./env' 
 })
 
 connectDB()
@@ -14,7 +14,7 @@ connectDB()
             console.log("ERROR in connecting to DB",error);
             throw error;
         });
-    app.listen(process.env.PORT|| 8000,(),=>{
+    app.listen(process.env.PORT|| 8000,()=>{
         console.log(`Server is running at port:${process.env.PORT}`);
         
     });
@@ -30,6 +30,7 @@ connectDB()
 
 //import connectDB from "./db/index.db.js";
 
+//2nd way used instead of creating index file under dbfile
 /*
 import express from "express";
 const app=express();        //initialize express app

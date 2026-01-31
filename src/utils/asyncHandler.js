@@ -1,7 +1,7 @@
 //1.using promises production grade code
 
 const asyncHandler=(requestHandler)=>{
-    (req,res,next)=>{
+    return (req,res,next)=>{
         Promise.resolve(requestHandler(req,res,next)).catch((err)=>next(err))
     }
 }
